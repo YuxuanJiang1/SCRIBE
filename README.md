@@ -40,7 +40,7 @@ pip install -r requirements/eval.txt
 
 ```
 - Next, get and fill all the required API. In this work, we use [GPT-5-mini](https://platform.openai.com/docs/models/gpt-5-mini).
-- Also, install tools for training and evaluation: [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/tree/main), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).
+- Also, install tools for training and evaluation: [Unsloth-GRPO](https://unsloth.ai/docs/get-started/unsloth-notebooks), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).
   
 ### 💻 Models
 
@@ -74,7 +74,3 @@ Will release after paper get accepted.
 </div>
 
 
-
-## Acknowledge
-
-- This work borrows and forks the following repositories for training and evaluation: [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/tree/main), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).
