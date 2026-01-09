@@ -39,16 +39,16 @@ source eval_env/bin/activate
 pip install -r requirements/eval.txt
 
 ```
-- Next, get and fill all the required API. In this work, we use [GPT-4o](https://openai.com/index/gpt-4/), [Gemini-2.0-flash](https://ai.google.dev/gemini-api/docs/models/gemini#gemini-2.0-flash) and [Chatgpt](https://openai.com/index/chatgpt/).
+- Next, get and fill all the required API. In this work, we use [GPT-5-mini](https://platform.openai.com/docs/models/gpt-5-mini).
 - Also, install tools for training and evaluation: [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory/tree/main), and [lm-evaluation-harness](https://github.com/EleutherAI/lm-evaluation-harness).
   
 ### 💻 Models
 
-We use [R1-Distill-Qwen-7B](https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Qwen-7B) for our main experiment. Please first get the access of that model.
+We use [Qwen3-4B-Instruct-2507](https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507) for our main experiment. Please first get the access of that model.
 
 ### 📥 Data
 
-Coming soon.
+Will release after paper get accepted.
 
 
 ## ⛳️ Run
