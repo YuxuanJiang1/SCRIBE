@@ -70,7 +70,7 @@ Coming soon.
 
 
 <div style="text-align: center;">
-  <img src="./resource/ab1.pdf" width="500">
+  <img src="./resource/ab1.png" width="500">
 </div>
 
 
