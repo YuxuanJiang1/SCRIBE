@@ -1,21 +1,21 @@
-## DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models
+## SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models
 
-This is the official repository of the paper [DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models](https://arxiv.org/abs/2505.13975).
+This is the official repository of the paper [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555).
 
 - If you find our work helpful and it has been of any assistance to you, we would greatly appreciate it if you could kindly cite it:
   
 ```
-@article{jiang2025drp,
-  title={DRP: Distilled Reasoning Pruning with Skill-aware Step Decomposition for Efficient Large Reasoning Models},
-  author={Jiang, Yuxuan and Li, Dawei and Ferraro, Frank},
-  journal={arXiv preprint arXiv:2505.13975},
-  year={2025}
+@article{jiang2026scribe,
+  title={SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models},
+  author={Jiang, Yuxuan and Ferraro, Francis},
+  journal={arXiv preprint arXiv:2601.03555},
+  year={2026}
 }
 ```
 
 ## 🚀 Introduction
 
-While Large Reasoning Models (LRMs) have demonstrated remarkable success in complex reasoning tasks through Long Chain-of-Thought (CoT) reasoning, their inference often involves excessively verbose reasoning traces, resulting in substantial inefficiency. To address this issue, we propose \textbf{Distilled Reasoning Pruning (DRP)}, a hybrid framework that combines inference-time pruning with tuning-based distillation---two widely used strategies for efficient reasoning. DRP employs a teacher model to perform skill-aware step decomposition and content pruning, and then distills the pruned reasoning paths into a student model, enabling it to reason both efficiently and accurately. Across a series of challenging mathematical reasoning datasets, we find models trained with DRP achieve substantial improvements in token efficiency without sacrificing accuracy. Specifically, DRP reduces the average token usage on GSM8K from 917 to 328 while improving accuracy from 91.7% to 94.1%, and achieves a 43% token reduction on AIME with no performance drop. Further analysis reveals that aligning the reasoning structure of training CoTs with the student’s reasoning capacity is critical for effective knowledge transfer and performance gains.
+Training reliable tool-augmented agents remains a significant challenge due to the difficulty of credit assignment in multi-step reasoning. While Process-level Reward Models (PRMs) offer a potential solution, standard LLM-based judges often provide inconsistent signals because they lack granular, task-specific rubrics to disentangle high-level planning from low-level execution. In this work, we propose SCRIBE (Skill-Conditioned Reward with Intermediate Behavioral Evaluation), a reinforcement learning framework that intervenes at a novel mid-level abstraction. SCRIBE anchors reward modeling in a curated library of Skill Prototypes, transforming open-ended LLM evaluation into a constrained verification task. By routing subgoals to specific prototypes, we provide the judge with precise rubrics that significantly reduce reward variance. Empirical results demonstrate that SCRIBE achieves state-of-the-art performance across reasoning and tool-use benchmarks; notably, it improves the AIME25 score of a Qwen3-4B model from 43.3% to 63.3% and substantially enhances success rates in complex multi-turn tool interactions. Furthermore, our analysis of training dynamics characterizes a co-evolution between levels, where mid-level skill mastery serves as a precursor to the emergence of strategic high-level planning. Finally, we show that SCRIBE is additive to low-level tool optimizations, offering a scalable and complementary approach to building more autonomous and reliable agents.
 
 <div style="text-align: center;">
   <img src="./resources/overview.png" width="800" >
