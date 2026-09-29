@@ -16,7 +16,7 @@ Let’s start with the problem. These two trajectories illustrate two ways an LL
 
 That distinction matters during reinforcement learning. The reward is the signal that tells the policy which behaviors to repeat. If it overlooks reasoning flaws or over-penalizes small execution errors, training can reinforce the wrong behavior. The curve on the right illustrates the instability that motivates this work. Our response is to make the evaluation standard explicit and reusable, so that a step is judged against a clear intermediate objective.
 
-## Slide 4 — From Final Answers to Intermediate Accomplishments
+## Slide 4 — Decomposing a Goal into Executable Units
 
 SCRIBE starts by identifying what each part of a trajectory is trying to accomplish. Consider a solution that factorizes a number, filters the factors, and then sums the remaining values. Each stage has a different objective and calls for a different skill. Rather than judging the entire trace with one vague standard, we evaluate whether each subgoal has been completed appropriately. This gives us a useful middle level between the final answer and individual tokens or lines of code.
 
@@ -40,13 +40,13 @@ A natural comparison is instance-level rubric generation. RaR uses a reference a
 
 With SCRIBE, the rubric construction does not require reference answers. In this comparison, SCRIBE reaches 95.8 on MATH500, 63.3 on AIME25, and 51.3 on BFCL overall. It outperforms the reference-based RaR configuration shown here on all three measures. The important point is that removing the reference-answer dependency does not force us to abandon explicit criteria. We obtain those criteria from reusable reasoning skills instead.
 
-## Slide 10 — Repeated Scoring: The Same Input
+## Slide 10 — Same Trajectory: Is the Reward Consistent?
 
-Now let’s examine reward consistency directly. In this illustrative example, the solution establishes that x times one minus x is at most one quarter, but does not demonstrate attainment. We hold the problem, trajectory, judge, and available rubric fixed and score the same input ten times. We then measure score agreement and variation. The table reports aggregate experimental results, not ten scores for this illustration. SCRIBE has the highest agreement and lowest standard deviation among these methods. A shared rubric makes repeated evaluation more stable.
+Here we evaluate repeatability. We give the reward judge one complete trajectory and ask it to assign a reward. Then we repeat that evaluation ten times with independent sampling. The problem, trajectory, judge, and rubric, when one is used, stay fixed. The schematic deliberately leaves the trajectory abstract: this test is about whether the same input receives a consistent reward. We report agreement and reward standard deviation across the experimental inputs. SCRIBE has the highest agreement and lowest variation among the methods shown.
 
-## Slide 11 — Cross-Instance Scoring: The Same Behavior
+## Slide 11 — Different Trajectories, Same Error: Consistent Rewards?
 
-The second test asks a different question: do similar behaviors receive similar scores across different problems? The two illustrative solutions here both jump from an upper bound to a maximum without showing attainment. Their numbers differ, but the reasoning gap is the same. In the experiment, we group matching subgoal behaviors across instances and compare their scores. SCRIBE reaches 86.8 percent agreement with a reward gap of 0.24. This is where reuse matters most: the same underlying behavior is assessed using the same standard.
+This test compares matching behaviors across different trajectories. Think back to the factorize, filter, and sum sequence. Trajectory A finds factors of 196 and should retain only factors below 14. Trajectory B finds factors of 144 and should retain only factors below 12. In both illustrations, the filtering step makes the same mistake: it includes the boundary value, using less than or equal to instead of strictly less than. We compare the rewards for those highlighted subgoal spans, not the entire trajectories. Do the same skill and the same failure receive consistent scores despite different problems? The table reports the aggregate experiment across 50 matched groups, not measured rewards for these illustrative sequences. SCRIBE uses a shared skill rubric and achieves higher agreement and a smaller reward gap.
 
 ## Slide 12 — Two Forms of Consistency
 
