@@ -7,9 +7,10 @@ Yuxuan Jiang and Francis Ferraro · University of Maryland, Baltimore County
 
 - [Presentation slides (PDF)](slides/SCRIBE_EMNLP2026.pdf)
 - [Editable slides (PowerPoint)](slides/SCRIBE_EMNLP2026.pptx)
+- [Speaker script (English)](slides/SCRIBE_EMNLP2026_speaker_script.md)
 - [Paper on arXiv](https://arxiv.org/abs/2601.03555)
 
-The presentation includes reusable skill-rubric examples, evaluation protocols, and results on mathematical reasoning and tool use. Protocol examples on slides 11–12 are illustrative; reported aggregate results come from the paper.
+The presentation includes reusable skill-rubric examples, evaluation protocols, and results on mathematical reasoning and tool use. Protocol examples on slides 10–11 are illustrative; reported aggregate results come from the paper.
 
 
 This is the official repository of the paper [SCRIBE: Structured Mid-Level Supervision for Tool-Using Language Models](https://arxiv.org/abs/2601.03555).
